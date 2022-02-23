@@ -31,6 +31,7 @@ int main() {
     ofstream output("/home/local/CLionProjects/VovaReznik/output.txt");
     reverse(words.begin(), words.end());
     for(const auto &l : words) {
+        cout << l << endl;
         output << l << endl;
     }
 
