@@ -19,9 +19,11 @@ int main() {
     ifstream handler("/home/local/CLionProjects/VovaReznik/words.txt");
     string word;
     vector <string> words;
-    int total_words = 0, filtered_words = 0;
+    int total_words = 0;
+    cout << endl << "input words:" << endl;
     while (handler >> word) {
         total_words ++;
+        cout << word << endl;
         if(regex_match(word, regex(mask))) {
             words.push_back(word);
         }
@@ -30,6 +32,7 @@ int main() {
     // output
     ofstream output("/home/local/CLionProjects/VovaReznik/output.txt");
     reverse(words.begin(), words.end());
+    cout << endl << "output words:" << endl;
     for(const auto &l : words) {
         cout << l << endl;
         output << l << endl;
